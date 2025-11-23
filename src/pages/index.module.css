@@ -1,0 +1,25 @@
+.wrapper {
+  max-height: 900px;
+  overflow: hidden;
+  position: relative;
+}
+
+.content {
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchInput {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.restaurantsList {
+  padding: 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 75px);
+}

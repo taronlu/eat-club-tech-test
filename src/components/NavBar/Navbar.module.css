@@ -1,0 +1,17 @@
+.navBar {
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  height: 56px;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.navButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

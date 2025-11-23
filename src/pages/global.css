@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+  margin: 0; 
+  padding: 0;
+  width: 100%;
+}
+
+.root {
+  align-items: center;
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, system-ui, Helvetica, Arial;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}
