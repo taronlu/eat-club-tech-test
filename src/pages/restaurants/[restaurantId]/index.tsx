@@ -71,29 +71,31 @@ const RestaurantDetailPage = ({ restaurant }: Props) => {
         </div>
 
         <div className={styles.divider} />
-        {restaurant.deals.map((deal: Deal) => {
-          const timeLabel =
-            deal.open && deal.close
-              ? `Between ${deal.open} – ${deal.close}`
-              : "Anytime during opening hours";
+        {[...restaurant.deals]
+          .sort((a, b) => Number(b.discount) - Number(a.discount))
+          .map((deal: Deal) => {
+            const timeLabel =
+              deal.open && deal.close
+                ? `Between ${deal.open} – ${deal.close}`
+                : "Anytime during opening hours";
 
-          return (
-            <div key={deal.objectId} className={styles.dealCard}>
-              <div className={styles.dealMain}>
-                <div className={styles.dealDiscount}>
-                  ⚡ {deal.discount}% Off
+            return (
+              <div key={deal.objectId} className={styles.dealCard}>
+                <div className={styles.dealMain}>
+                  <div className={styles.dealDiscount}>
+                    ⚡ {deal.discount}% Off
+                  </div>
+                  <div className={styles.dealSub}>{timeLabel}</div>
+                  <div className={styles.dealQuantity}>
+                    {deal.qtyLeft} Deals Left
+                  </div>
                 </div>
-                <div className={styles.dealSub}>{timeLabel}</div>
-                <div className={styles.dealQuantity}>
-                  {deal.qtyLeft} Deals Left
-                </div>
+                <button type="button" className={styles.redeemButton}>
+                  Redeem
+                </button>
               </div>
-              <button type="button" className={styles.redeemButton}>
-                Redeem
-              </button>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </main>
   );
